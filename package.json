@@ -1,0 +1,15 @@
+{
+    "name": "treasuremc-ticket-bot",
+    "version": "1.0.0",
+    "description": "TreasureMC Discord Ticket Bot",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "deploy": "node deploy-commands.js"
+    },
+    "dependencies": {
+        "better-sqlite3": "^11.0.0",
+        "discord.js": "^14.16.0",
+        "dotenv": "^16.4.0"
+    }
+}
