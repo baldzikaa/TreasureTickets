@@ -5,7 +5,7 @@ const { getBlacklist } = require('../database');
 async function sendPanel(channel) {
     const embed = new EmbedBuilder()
         .setTitle('🎫 TreasureMC Support')
-        .setDescription('Welcome to ServerName Support!\nPlease select the appropriate category below to create a ticket.\n\n' +
+        .setDescription('Welcome to TreasureMC Support!\nPlease select the appropriate category below to create a ticket.\n\n' +
             '📩 **General Support** — General questions or issues\n' +
             '💳 **Billing Support** — Payment or billing issues\n' +
             '⚖️ **Punishment Appeal** — Appeal a punishment\n' +
@@ -13,7 +13,7 @@ async function sendPanel(channel) {
             '🚨 **Player Reports** — Report a player\n' +
             '🛡️ **Staff Reports** — Report a staff member')
         .setColor(0x2B2D31)
-        .setFooter({ text: 'ServerName Ticket System' })
+        .setFooter({ text: 'TreasureMC Ticket System' })
         .setTimestamp();
 
     const row1 = new ActionRowBuilder().addComponents(
@@ -69,4 +69,5 @@ async function handlePanelButton(interaction) {
 }
 
 module.exports = { sendPanel, handlePanelButton };
+
 
