@@ -5,7 +5,7 @@ const { getBlacklist } = require('../database');
 async function sendPanel(channel) {
     const embed = new EmbedBuilder()
         .setTitle('🎫 TreasureMC Support')
-        .setDescription('Welcome to TreasureMC Support!\nPlease select the appropriate category below to create a ticket.\n\n' +
+        .setDescription('Welcome to ServerName Support!\nPlease select the appropriate category below to create a ticket.\n\n' +
             '📩 **General Support** — General questions or issues\n' +
             '💳 **Billing Support** — Payment or billing issues\n' +
             '⚖️ **Punishment Appeal** — Appeal a punishment\n' +
@@ -13,7 +13,7 @@ async function sendPanel(channel) {
             '🚨 **Player Reports** — Report a player\n' +
             '🛡️ **Staff Reports** — Report a staff member')
         .setColor(0x2B2D31)
-        .setFooter({ text: 'TreasureMC Ticket System' })
+        .setFooter({ text: 'ServerName Ticket System' })
         .setTimestamp();
 
     const row1 = new ActionRowBuilder().addComponents(
@@ -43,7 +43,7 @@ async function handlePanelButton(interaction) {
             const expiry = blacklistEntry.expires_at ? `<t:${Math.floor(new Date(blacklistEntry.expires_at).getTime() / 1000)}:R>` : 'Permanent';
             return interaction.reply({
                 embeds: [new EmbedBuilder()
-                    .setTitle('❌ Blacklisted')
+                    .setTitle('❌ Blacklisted - You are blacklisted from creating tickets.')
                     .setDescription(`You are blacklisted from creating tickets.\n\n**Reason:** ${blacklistEntry.reason}\n**Expires:** ${expiry}`)
                     .setColor(0xED4245)],
                 ephemeral: true,
@@ -69,3 +69,4 @@ async function handlePanelButton(interaction) {
 }
 
 module.exports = { sendPanel, handlePanelButton };
+
