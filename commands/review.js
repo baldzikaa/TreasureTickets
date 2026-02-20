@@ -3,7 +3,7 @@ const { SlashCommandBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, Act
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('review')
-        .setDescription('Leave a review for your ticket experience'),
+        .setDescription('Leave a review for your ticket experience!'),
 
     async execute(interaction) {
         const modal = new ModalBuilder()
@@ -13,7 +13,7 @@ module.exports = {
         const ratingInput = new TextInputBuilder()
             .setCustomId('review_rating')
             .setLabel('Rating (1-5)')
-            .setPlaceholder('Enter a number between 1 and 5')
+            .setPlaceholder('Enter a number between 1 and 5!')
             .setStyle(TextInputStyle.Short)
             .setRequired(true)
             .setMaxLength(1);
@@ -21,7 +21,7 @@ module.exports = {
         const feedbackInput = new TextInputBuilder()
             .setCustomId('review_feedback')
             .setLabel('Feedback')
-            .setPlaceholder('Tell us about your experience')
+            .setPlaceholder('Tell us about your experience!')
             .setStyle(TextInputStyle.Paragraph)
             .setRequired(false)
             .setMaxLength(1024);
@@ -34,3 +34,4 @@ module.exports = {
         await interaction.showModal(modal);
     },
 };
+
