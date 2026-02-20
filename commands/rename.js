@@ -10,12 +10,12 @@ module.exports = {
 
     async execute(interaction) {
         if (!hasPermission(interaction.member, 1)) {
-            return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true });
+            return interaction.reply({ content: 'You do not have permission to use this command!', ephemeral: true });
         }
 
         const ticket = getTicketByChannel.get(interaction.channel.id);
         if (!ticket) {
-            return interaction.reply({ content: 'This command can only be used in a ticket channel.', ephemeral: true });
+            return interaction.reply({ content: 'This command can only be used in a ticket channel!', ephemeral: true });
         }
 
         const newName = interaction.options.getString('name').toLowerCase().replace(/[^a-z0-9-]/g, '-');
@@ -31,3 +31,4 @@ module.exports = {
         await interaction.reply({ embeds: [embed] });
     },
 };
+
