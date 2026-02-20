@@ -4,7 +4,7 @@ const { hasPermission } = require('../utils/permissions');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
-        .setDescription('View detailed information about all ticket system commands'),
+        .setDescription('View detailed information about all ticket system commands.'),
 
     async execute(interaction) {
         if (!hasPermission(interaction.member, 1)) {
@@ -17,7 +17,7 @@ module.exports = {
             .addFields(
                 {
                     name: '👥 Everyone',
-                    value: '`/review` — Leave a review for your ticket experience',
+                    value: '`/review` — Leave a review for your ticket experience!',
                     inline: false,
                 },
                 {
@@ -78,3 +78,4 @@ module.exports = {
         await interaction.reply({ embeds: [embed], ephemeral: true });
     },
 };
+
