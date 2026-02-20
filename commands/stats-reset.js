@@ -18,10 +18,11 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setTitle('🔄 Stats Reset')
-            .setDescription(`All ticket stats for <@${user.id}> have been reset by <@${interaction.user.id}>.`)
+            .setDescription(`All ticket stats for <@${user.id}> have been reset by <@${interaction.user.id}>!`)
             .setColor(0xFEE75C)
             .setTimestamp();
 
         await interaction.reply({ embeds: [embed] });
     },
 };
+
